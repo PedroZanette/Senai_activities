@@ -20,9 +20,27 @@ function calcu(){
    }
    else if(document.getElementById("ni").checked){     
         resultado = calculo/2
-        resultado = "Seu número contém " + Math.floor(resultado)
+        resultado = "Seu número contém " + Math.floor(resultado) + " números pares"
    }
    else if(document.getElementById("np").checked){
+    do {
+        if (calculo == 2 || calculo == 3){
+          resultado++
+          calculo -= 1
+          
+        }
+        else if (calculo % 2 == 0 || calculo % 3 == 0 || calculo % 5 == 0){
+          resultado += 0
+          calculo = calculo - 1
+           
+        }
+        else {
+          resultado++
+          calculo = calculo - 1
+        }
+      }
+    while (calculo >= 0 )
+    resultado = "Seu número contém " + resultado + " número(s) primo(s)"
        
    }
    else{
