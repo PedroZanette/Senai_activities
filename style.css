@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(142, 158, 98);
+
+}
+h1{
+    text-align: center;
+}
+label{
+    font-size: 27px;
+}
+p{
+    text-align: center;
+    text-justify: auto;
+    text-decoration: solid;
+    font-size: 25px;
+}
