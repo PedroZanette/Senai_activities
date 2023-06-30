@@ -11,6 +11,7 @@ function calcu(){
             resultado = "Falta pagar " + resultado + "$"
         }
         else if (resultado <= 0){
+            resultado = resultado - resultado + (-resultado )
             resultado = "Troco de " + resultado + "$"
    } 
    }
