@@ -20,7 +20,7 @@ function calcu(){
         resultado = "O veículo faz " + Math.floor(resultado, -2) + " por litro"
    }
    else if(document.getElementById("ni").checked){     
-        resultado = calculo/2
+        resultado = calculo/2 -1
         resultado = "Seu número contém " + Math.floor(resultado) + " números pares"
    }
    else if(document.getElementById("np").checked){
