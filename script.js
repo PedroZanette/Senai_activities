@@ -11,6 +11,7 @@ function anoNovo(){
     console.log(resultado)
     document.getElementById("resultado").innerHTML = resultado
 }
+
 function tabuada(){
     var numer = (document.getElementById("numero").value)
     
@@ -21,4 +22,25 @@ function tabuada(){
     }
 
 document.getElementById("resultado").innerHTML = resultado
+}
+
+function somaNumero(){
+    let i = 0
+    let e = 0
+    while(i < 50){
+        if((i % 2) == 0){
+            i++
+            e = i
+            resultado = e + e
+            console.log(resultado)
+        }
+        else{
+            i++
+        }
+
+        console.log(resultado)
+    }
+    
+    console.log(resultado)
+    document.getElementById("resultado").innerHTML = resultado
 }
