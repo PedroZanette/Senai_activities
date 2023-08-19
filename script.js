@@ -25,22 +25,46 @@ document.getElementById("resultado").innerHTML = resultado
 }
 
 function somaNumero(){
-    let i = 0
-    let e = 0
-    while(i < 50){
-        if((i % 2) == 0){
-            i++
-            e = i
-            resultado = e + e
-            console.log(resultado)
+    let qtd = 0;
+    let soma = 0;
+    let i = 0;
+    while(qtd < 50){
+        i ++;
+        if(i % 2 == 0){
+            qtd ++;
+            soma += i;
+            console.log(qtd+": "+i +" + "+(soma-i)+" = "+soma)
         }
-        else{
-            i++
+    }
+}
+
+function primo(){
+    var numer = (document.getElementById("numero").value)
+    let divisores = 0
+
+        for (let i = 2; i <= Math.sqrt(numer); i++) {
+            if (numer % i === 0) {
+                divisores++
+            }
         }
 
-        console.log(resultado)
+    if (divisores === 0) {
+        console.log(`${numer} é um número primo.`)
+    } else {
+        console.log(`${numer} não é um número primo.`)
     }
-    
-    console.log(resultado)
-    document.getElementById("resultado").innerHTML = resultado
+}
+
+function fabo(){
+    let termoAtual = 0;
+    let proximoTermo = 1;
+    let contador = 0;
+    var numer = (document.getElementById("numero").value)
+    while (contador < numer) {
+        console.log(termoAtual);
+        let soma = termoAtual + proximoTermo;
+        termoAtual = proximoTermo;
+        proximoTermo = soma;
+        contador++;
+    }   
 }
