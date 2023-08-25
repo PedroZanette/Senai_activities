@@ -4,11 +4,17 @@ const profissoes = [];
 function add(){
         const nome = document.getElementById("name").value.toUpperCase();
         const profissao = document.getElementById("job").value.toUpperCase();
-           
-        nomes.push(nome);
-        profissoes.push(profissao);
+
+        const index = nomes.indexOf(nome);
+
+        if(index == -1){
+                nomes.push(nome);
+                profissoes.push(profissao);
+                atualizarLista();  
+        }else {
+                alert(`${nome} já existe na lista.`); 
+        }
         
-        atualizarLista();
 }
         
 function remove() {
@@ -38,4 +44,3 @@ function atualizarLista() {
        listaPessoas.appendChild(item);
      }
 }
-
