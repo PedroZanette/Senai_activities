@@ -1,38 +1,37 @@
-const nomes = [];
-const profissoes = [];
-       
-function add(){
-        const nome = document.getElementById("name").value;
-        const profissao = document.getElementById("job").value;
-           
-        nomes.push(nome);
-        profissoes.push(profissao);
-           
-        atualizarLista();
-}
-        
-function remove() {
-        const nome = document.getElementById("name").value;
-        const index = nomes.indexOf(nome);
-           
-        if (index !== -1) {
-                nomes.splice(index, 1);
-                profissoes.splice(index, 1);
-                alert(`${nome} removido(a) com sucesso.`);
-        } else {
-                alert(`${nome} não encontrado(a).`);
-        }
-           
-        atualizarLista();
-}
-       
-function atualizarLista() {
-     const listaPessoas = document.getElementById("listaPessoas");
-     listaPessoas.innerHTML = "";
-           
-     for (let i = 0; i < nomes.length; i++) {
-       const item = document.createElement("li");
-       item.textContent = `${nomes[i]} - ${profissoes[i]}`;
-       listaPessoas.appendChild(item);
-     }
-}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .input-container {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ ul{
+    padding: 8px 15px;
+    border-radius: 4px;
+    background-color: rgb(163, 162, 162);
+ } 
+  
