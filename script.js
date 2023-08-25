@@ -2,24 +2,26 @@ const nomes = [];
 const profissoes = [];
        
 function add(){
-        const nome = document.getElementById("name").value;
-        const profissao = document.getElementById("job").value;
+        const nome = document.getElementById("name").value.toUpperCase();
+        const profissao = document.getElementById("job").value.toUpperCase();
            
         nomes.push(nome);
         profissoes.push(profissao);
-           
+        
         atualizarLista();
 }
         
 function remove() {
-        const nome = document.getElementById("name").value;
+        const nome = document.getElementById("name").value.toUpperCase();
+        
         const index = nomes.indexOf(nome);
-           
+        
         if (index !== -1) {
                 nomes.splice(index, 1);
                 profissoes.splice(index, 1);
                 alert(`${nome} removido(a) com sucesso.`);
         } else {
+               
                 alert(`${nome} não encontrado(a).`);
         }
            
@@ -36,3 +38,4 @@ function atualizarLista() {
        listaPessoas.appendChild(item);
      }
 }
+
