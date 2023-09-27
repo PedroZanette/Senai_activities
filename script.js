@@ -18,7 +18,7 @@ function login() {
             if (usuario.login == login && usuario.senha == senha) {
                 mensagem = "Parabéns, você logou!";
                 localStorage.setItem("logado", JSON.stringify(usuario));
-                window.location.href = "home.html"
+                window.location.href = "./logado/home.html"
                 break;
             }
         }
