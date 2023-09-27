@@ -29,9 +29,6 @@ function login() {
 }
 
 function cadastra() {
-    if(verificaSeExiste(campoNovoLogin.value, bancoDeDados)){
-        alert("Já existe um usuário BOCÓ!")
-    }
     if (campoNovaSenha.value == campoRepSenha.value) {
         const usuario = {
             login: campoNovoLogin.value,
@@ -41,15 +38,25 @@ function cadastra() {
         if (bancoDeDados == null) {
             bancoDeDados = [];
         }
+        if(verificaSeExiste(campoNovoLogin.value, bancoDeDados)){
+            alert("Esse login já está cadastrado.")
+        }
+        else{
         bancoDeDados.push(usuario);
         localStorage.setItem("bancoDeDados", JSON.stringify(bancoDeDados));
-
+        alert("Usuário cadastrado com sucesso!")
+        }
     } else {
         alert("As senhas são diferentes!");
     }
-    alert("Usuário cadastrado com sucesso!")
+    
 }
 
-function verificaSeExiste(){
-    
+function verificaSeExiste(login, banco){
+    for(usuario of banco){
+        if(login == usuario.login){
+            return true;
+        }
+    }
+    return false;
 }
